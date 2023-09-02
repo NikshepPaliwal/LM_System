@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    CardView generate_student_card, add_books, return_book,issue_books;
+    CardView generate_student_card, add_books, return_book,issue_books,all_student_list;
     FirebaseUser user;
     ImageView logout;
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         return_book = findViewById(R.id.return_book);
         logout = findViewById(R.id.logout);
         issue_books=findViewById(R.id.issue_books);
-
+        all_student_list = findViewById(R.id.all_students_list);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (user == null) {
@@ -75,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent=new Intent(MainActivity.this, get_student_profile.class);
                     startActivity(intent);
+                }
+            });
+            all_student_list.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(MainActivity.this, allClasslist.class));
                 }
             });
 

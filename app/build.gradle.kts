@@ -41,6 +41,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:21.1.0")
     implementation("com.google.firebase:firebase-database:20.1.0")
     implementation("com.google.firebase:firebase-storage:20.1.0")
+    implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
+    implementation("com.google.firebase:firebase-messaging:23.2.1")
     testImplementation("junit:junit:4.13.2")
     implementation ("com.google.android.gms:play-services-vision:20.1.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

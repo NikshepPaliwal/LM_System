@@ -16,6 +16,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.ninja_developer.librarymanagementsystem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,7 +34,7 @@ public class get_student_profile extends AppCompatActivity {
     String className;
     EditText roll_number;
     TextView studentName, branch, Roll;
-    AppCompatButton search_btn, issued_books_btn, issue_books;
+    AppCompatButton search_btn, issued_books_btn, issue_books, return_book,delete_account;
     ImageView imageView;
 
     @Override
@@ -48,7 +50,8 @@ public class get_student_profile extends AppCompatActivity {
         Roll= findViewById(R.id.Roll);
         branch= findViewById(R.id.branch);
         imageView=findViewById(R.id.imageView);
-
+        return_book = findViewById(R.id.return_book);
+        delete_account = findViewById(R.id.delete_account);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -112,6 +115,40 @@ public class get_student_profile extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        return_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(get_student_profile.this, return_book.class);
+                Bundle b= new Bundle();
+                b.putString("roll_number", roll_number.getText().toString());
+                b.putString("class_name", className.toString());
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
+        delete_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String Roll_Number= roll_number.getText().toString();
+                FirebaseUser firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
+                String userId = firebaseuser.getUid();
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                StorageReference imgUploader= storage.getReference("uploads").child(userId).child("Image"+Roll_Number);
+                DatabaseReference databaseReference;
+                databaseReference = FirebaseDatabase.getInstance().getReference("Libraries").child(userId).child("Students Card").child(className).child(Roll_Number);
+                imgUploader.delete();
+                databaseReference.removeValue();
+                issued_books_btn.setVisibility(View.INVISIBLE);
+                issue_books.setVisibility(View.INVISIBLE);
+                return_book.setVisibility(View.INVISIBLE);
+                delete_account.setVisibility(View.INVISIBLE);
+                studentName.setText("");
+                Roll.setText("");
+                branch.setText("");
+                imageView.setImageResource(R.drawable.ic_launcher_background);
+
+            }
+        });
 
 
     }
@@ -129,9 +166,9 @@ public class get_student_profile extends AppCompatActivity {
                         Toast.makeText(get_student_profile.this, "Succesfully read", Toast.LENGTH_SHORT).show();
                         DataSnapshot dataSnapshot = task.getResult();
                         String name = String.valueOf(dataSnapshot.child("student_name").getValue());
-                        String rollNumber = String.valueOf(dataSnapshot.child("roll_number").getValue());
+                        String rollNumber = String.valueOf(dataSnapshot.child("roll").getValue());
                         String Branch = String.valueOf(dataSnapshot.child("branch").getValue());
-                        String imgUrl= String.valueOf(dataSnapshot.child("image_uri").getValue());
+                        String imgUrl= String.valueOf(dataSnapshot.child("imageUri").getValue());
                         studentName.setVisibility(View.VISIBLE);
                         Roll.setVisibility(View.VISIBLE);
                         branch.setVisibility(View.VISIBLE);
@@ -141,6 +178,8 @@ public class get_student_profile extends AppCompatActivity {
                         branch.setText(Branch);
                         issued_books_btn.setVisibility(View.VISIBLE);
                         issue_books.setVisibility(View.VISIBLE);
+                        return_book.setVisibility(View.VISIBLE);
+                        delete_account.setVisibility(View.VISIBLE);
                         Picasso.get().load(imgUrl).into(imageView);
 
 
