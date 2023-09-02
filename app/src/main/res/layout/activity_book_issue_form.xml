@@ -14,7 +14,7 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="50sp"
-            android:background="#BC0724FB"
+            android:background="#2D74AA"
             android:gravity="center"
             android:text="Issuing Book"
             android:textColor="@color/white"

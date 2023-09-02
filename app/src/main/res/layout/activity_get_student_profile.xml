@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".get_student_profile"
-    android:background="#80BEEF">
+    android:background="#2D74AA">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +17,7 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="50sp"
-            android:background="#4C5FEA"
+            android:background="#2D74AA"
             android:gravity="center"
             android:text="Getting Student Profile"
             android:textColor="@color/white"

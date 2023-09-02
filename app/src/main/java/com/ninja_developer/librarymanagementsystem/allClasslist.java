@@ -96,6 +96,7 @@ public class allClasslist extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dsp : snapshot.getChildren()) {
                     String roll = dsp.getKey();
+                    Toast.makeText(allClasslist.this, ""+roll, Toast.LENGTH_SHORT).show();
                     class_model model = dsp.getValue(class_model.class);
                     item.add(model);
 
