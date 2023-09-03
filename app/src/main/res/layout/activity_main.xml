@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
 
-    android:background="#2D74AA"
+    android:background="@drawable/wave"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
