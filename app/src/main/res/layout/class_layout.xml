@@ -18,6 +18,7 @@
         android:backgroundTint="#80BEEF"
         app:cardElevation="10sp"
         app:cardCornerRadius="10sp"
+
         >
 
         <TextView

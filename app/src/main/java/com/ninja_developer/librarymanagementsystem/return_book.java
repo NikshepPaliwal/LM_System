@@ -70,7 +70,8 @@ public class return_book extends AppCompatActivity {
                     DatabaseReference databaseReference;
                     databaseReference = FirebaseDatabase.getInstance().getReference("Libraries").child(userId).child("Students Card").child(className).child(roll).child("Issued Books").child(intentData);
                     databaseReference.removeValue();
-
+                    Toast.makeText(return_book.this, "Book Returned Successfully, Go Back.", Toast.LENGTH_SHORT).show();
+                    finish();
 
                 }
             }

@@ -1,7 +1,9 @@
 package com.ninja_developer.librarymanagementsystem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AlertDialogLayout;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
@@ -99,7 +101,7 @@ public class get_student_profile extends AppCompatActivity {
             public void onClick(View view) {
 
                 startActivity(new Intent(get_student_profile.this, issue_books_to_students.class));
-                finish();
+
 
             }
         });
@@ -124,11 +126,14 @@ public class get_student_profile extends AppCompatActivity {
                 b.putString("class_name", className.toString());
                 i.putExtras(b);
                 startActivity(i);
+
             }
         });
         delete_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 String Roll_Number= roll_number.getText().toString();
                 FirebaseUser firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
                 String userId = firebaseuser.getUid();
@@ -185,6 +190,15 @@ public class get_student_profile extends AppCompatActivity {
 
                         // addItem(name,Price,no_products);
                     } else {
+                        studentName.setVisibility(View.INVISIBLE);
+                        Roll.setVisibility(View.INVISIBLE);
+                        branch.setVisibility(View.INVISIBLE);
+                        imageView.setVisibility(View.INVISIBLE);
+                        issued_books_btn.setVisibility(View.INVISIBLE);
+                        issue_books.setVisibility(View.INVISIBLE);
+                        return_book.setVisibility(View.INVISIBLE);
+                        delete_account.setVisibility(View.INVISIBLE);
+
                         Toast.makeText(get_student_profile.this, "Data not found.", Toast.LENGTH_SHORT).show();
                     }
                 }

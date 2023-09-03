@@ -1,11 +1,14 @@
 package com.ninja_developer.librarymanagementsystem;
 
+import static android.graphics.Color.GRAY;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,7 +61,7 @@ public class issued_books extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
                     if (task.getResult().exists()) {
-                        Toast.makeText(issued_books.this, "Succesfully read", Toast.LENGTH_SHORT).show();
+
                         DataSnapshot dataSnapshot = task.getResult();
                         String name = String.valueOf(dataSnapshot.child("student_name").getValue());
                         student_name.setText("Welcome "+name);
@@ -88,10 +91,13 @@ public class issued_books extends AppCompatActivity {
                     model model = dsp.getValue(model.class);
                     item.add(model);
                 }
-                issued_book_adapter adapter = new issued_book_adapter(issued_books.this, item);
-                recyclerView.setAdapter(adapter);
+                if(item.size() == 0){
+                    Toast.makeText(issued_books.this, "No Book found.", Toast.LENGTH_SHORT).show();
+                }else {
+                    issued_book_adapter adapter = new issued_book_adapter(issued_books.this, item);
+                    recyclerView.setAdapter(adapter);
+                }
                 //here clear the list
-
             }
 
             @Override

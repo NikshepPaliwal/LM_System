@@ -135,7 +135,7 @@ public class book_issue_form extends AppCompatActivity {
         author_name.setText("");
         book_condition.setText("");
         Toast.makeText(this, "Issued", Toast.LENGTH_SHORT).show();
-
+        finish();
 
     }
 }

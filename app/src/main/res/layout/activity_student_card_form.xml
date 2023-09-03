@@ -5,38 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".student_card_form"
-    android:background="#D12727">
+    android:background="#2D74AA">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="50sp"
-            android:background="#BC0724FB"
+            android:background="#2D74AA"
             android:gravity="center"
-            android:text="Add Products"
+            android:text="Registration Form"
             android:textColor="@color/white"
             android:textSize="25sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="880sp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
+            app:cardBackgroundColor="#FDF8F8"
             app:cardCornerRadius="15sp"
             app:cardElevation="15sp"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,7 +50,6 @@
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/filledTextField1"
@@ -101,19 +103,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-           <Spinner
-               android:layout_width="match_parent"
-               android:layout_height="50sp"
-               android:layout_marginTop="205sp"
-               android:layout_marginStart="20sp"
-               android:layout_marginEnd="20sp"
-               android:id="@+id/class_name"
-               android:background="@drawable/class_shape"
-               android:paddingLeft="10sp"
-               >
+            <Spinner
+                android:id="@+id/class_name"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="205sp"
+                android:layout_marginEnd="20sp"
+                android:background="@drawable/class_shape"
+                android:paddingLeft="10sp">
 
-           </Spinner>
-
+            </Spinner>
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -142,8 +142,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/filledTextField4"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -168,6 +166,7 @@
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/filledTextField5"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -220,14 +219,13 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/select_img"
                 android:layout_width="150sp"
                 android:layout_height="50sp"
                 android:layout_gravity="end"
-                android:layout_marginEnd="15sp"
                 android:layout_marginVertical="580dp"
+                android:layout_marginEnd="15sp"
                 android:backgroundTint="#283593"
                 android:text="Browse"
                 android:textColor="@color/white"
@@ -235,13 +233,13 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="130sp"
                 android:layout_height="120sp"
-                android:layout_marginTop="580sp"
                 android:layout_marginStart="20sp"
-                android:id="@+id/imageView"
+                android:layout_marginTop="580sp"
                 android:fitsSystemWindows="true"
-                >
+                android:src="@drawable/img_select">
 
             </ImageView>
 
@@ -260,21 +258,6 @@
 
 
         </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

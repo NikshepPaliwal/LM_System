@@ -10,8 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
 
         <TextView
             android:id="@+id/textView9"
@@ -22,22 +22,21 @@
             android:text="Getting Student Profile"
             android:textColor="@color/white"
             android:textSize="25sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="-1dp"
+            android:fontFamily="sans-serif-condensed"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="630sp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="36dp"
             app:cardCornerRadius="15sp"
             app:cardElevation="15sp"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            tools:layout_editor_absoluteX="0dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,7 +46,8 @@
                 android:text="Student Details"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"/>
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -71,6 +71,7 @@
                     android:layout_height="wrap_content"
                     android:enabled="true"
                     android:inputType="text"
+                    android:fontFamily="sans-serif-condensed"
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -84,7 +85,8 @@
                 android:layout_marginTop="165sp"
                 android:layout_marginEnd="20sp"
                 android:background="@drawable/class_shape"
-                android:paddingLeft="10sp">
+                android:paddingLeft="10sp"
+                >
 
             </Spinner>
 
@@ -100,17 +102,17 @@
                 android:text="Search"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"/>
 
 
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="130sp"
                 android:layout_height="110sp"
-                android:layout_marginTop="290sp"
                 android:layout_marginLeft="20sp"
+                android:layout_marginTop="290sp"
                 android:background="@color/white"
-                android:id="@+id/imageView"
                 android:visibility="invisible">
 
             </ImageView>
@@ -125,41 +127,41 @@
                 android:text="Name"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:visibility="invisible">
+                android:visibility="invisible"
+                android:fontFamily="sans-serif-condensed">
 
             </TextView>
 
 
             <TextView
+                android:id="@+id/Roll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:layout_marginTop="320sp"
+                android:layout_marginEnd="20sp"
                 android:text="Roll Number"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_gravity="end"
-                android:layout_marginEnd="20sp"
-                android:id="@+id/Roll"
                 android:visibility="invisible"
-                >
+                android:fontFamily="sans-serif-condensed">
 
             </TextView>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/branch"
+                android:layout_width="53dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
                 android:layout_marginTop="350sp"
+                android:layout_marginEnd="20sp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Branch"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_gravity="end"
-                android:layout_marginEnd="20sp"
-                android:id="@+id/branch"
-                android:visibility="invisible"
-                >
+                android:visibility="invisible">
 
             </TextView>
-
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -174,7 +176,8 @@
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:fontFamily="sans-serif-condensed"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/issued_books_btn"
@@ -189,7 +192,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:visibility="invisible"
-                />
+                android:fontFamily="sans-serif-condensed"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/return_book"
@@ -204,8 +207,9 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:visibility="invisible"
-
+                android:fontFamily="sans-serif-condensed"
                 />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/delete_account"
                 android:layout_width="150sp"
@@ -218,15 +222,11 @@
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:fontFamily="sans-serif-condensed"/>
 
 
         </androidx.cardview.widget.CardView>
-
-
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -148,7 +148,7 @@ public class student_card_form extends AppCompatActivity {
                             father_name.setText("");
                             mobile_number.setText("");
                             address.setText("");
-                            imgView.setImageResource(R.drawable.ic_launcher_background);
+                            imgView.setImageResource(R.drawable.img_select);
                             Toast.makeText(student_card_form.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                         }
                     }
