@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".download_library_card"
+            android:exported="false" />
+        <activity
             android:name=".allClasslist"
             android:exported="false" />
         <activity
@@ -30,7 +33,6 @@
         <activity
             android:name=".issue_books_to_students"
             android:exported="false" />
-
         <activity
             android:name=".get_student_profile"
             android:exported="false" />

@@ -1,4 +1,4 @@
-package com.ninja_developer.librarymanagementsystem;
+package com.ninja_developer.lmsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -12,6 +12,7 @@ import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,27 +20,31 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 
-public class return_book extends AppCompatActivity {
+public class issue_books_to_students extends AppCompatActivity {
+
 
     SurfaceView surfaceView;
     TextView txtBarcodeValue;
+    ImageView tourch;
     private BarcodeDetector barcodeDetector;
+    //    static CameraManager cameraManager;
+//    Static
     private CameraSource cameraSource;
     private static final int REQUEST_CAMERA_PERMISSION = 201;
-    AppCompatButton return_bookbtn;
+    AppCompatButton issue_book_to_student;
     String intentData = "";
     boolean isEmail = false;
+    //    private CameraManager cameraManager;
+//    private String getCameraID;
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_return_book);
+        setContentView(R.layout.activity_issue_books_to_students);
 
         initViews();
 
@@ -53,29 +58,20 @@ public class return_book extends AppCompatActivity {
     private void initViews() {
         txtBarcodeValue = findViewById(R.id.txtBarcodeValue);
         surfaceView = findViewById(R.id.surfaceView);
-        return_bookbtn = findViewById(R.id.return_bookbtn);
+        issue_book_to_student = findViewById(R.id.issue_book_to_student);
 
 
-        return_bookbtn.setOnClickListener(new View.OnClickListener() {
+        issue_book_to_student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (intentData.length() > 0) {
 
-                    String className, roll;
-                    Bundle a = getIntent().getExtras();
-                    className = a.getString("class_name");
-                    roll = a.getString("roll_number");
-                    FirebaseUser firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
-                    String userId = firebaseuser.getUid();
-                    DatabaseReference databaseReference;
-                    databaseReference = FirebaseDatabase.getInstance().getReference("Libraries").child(userId).child("Students Card").child(className).child(roll).child("Issued Books").child(intentData);
-                    databaseReference.removeValue();
-                    Toast.makeText(return_book.this, "Book Returned Successfully, Go Back.", Toast.LENGTH_SHORT).show();
-                    finish();
+                    startActivity(new Intent(issue_books_to_students.this, book_issue_form.class).putExtra("scanned value", intentData));
 
                 }
             }
         });
+
 
     }
 
@@ -95,10 +91,10 @@ public class return_book extends AppCompatActivity {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
                 try {
-                    if (ActivityCompat.checkSelfPermission(return_book.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.checkSelfPermission(issue_books_to_students.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                         cameraSource.start(surfaceView.getHolder());
                     } else {
-                        ActivityCompat.requestPermissions(return_book.this, new
+                        ActivityCompat.requestPermissions(issue_books_to_students.this, new
                                 String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
                     }
 
@@ -138,10 +134,8 @@ public class return_book extends AppCompatActivity {
                                 intentData = barcodes.valueAt(0).email.address;
                                 txtBarcodeValue.setText(intentData);
                                 isEmail = true;
-                                return_bookbtn.setText("ADD CONTENT TO THE MAIL");
                             } else {
                                 isEmail = false;
-                                return_bookbtn.setText("RETURN BOOK");
                                 intentData = barcodes.valueAt(0).displayValue;
                                 txtBarcodeValue.setText(intentData);
                             }
@@ -153,6 +147,7 @@ public class return_book extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -164,4 +159,5 @@ public class return_book extends AppCompatActivity {
         super.onResume();
         initialiseDetectorsAndSources();
     }
+
 }

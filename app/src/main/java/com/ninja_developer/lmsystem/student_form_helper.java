@@ -1,4 +1,4 @@
-package com.ninja_developer.librarymanagementsystem;
+package com.ninja_developer.lmsystem;
 
 public class student_form_helper {
     String student_name;

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:324401792438:android:b5b2b4910b9c9631d12d17",
         "android_client_info": {
-          "package_name": "com.ninja_developer.librarymanagementsystem"
+          "package_name": "com.ninja_developer.lmsystem"
         }
       },
       "oauth_client": [
@@ -39,7 +39,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:324401792438:android:54fc94cac206fa05d12d17",
         "android_client_info": {
-          "package_name": "com.ninja_developer.librarymanagementsystem"
+          "package_name": "com.ninja_developer.lmsystem"
         }
       },
       "oauth_client": [

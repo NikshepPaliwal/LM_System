@@ -1,4 +1,4 @@
-package com.ninja_developer.librarymanagementsystem;
+package com.ninja_developer.lmsystem;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +18,7 @@ public class allclasslist_adapter extends RecyclerView.Adapter<allclasslist_adap
     ArrayList<class_model> list;
     Context context;
 
-    allclasslist_adapter(Context context,ArrayList<class_model>list) {
+    allclasslist_adapter(Context context,ArrayList<class_model> list) {
 
         this.context = context;
         this.list=list;
@@ -38,7 +37,8 @@ public class allclasslist_adapter extends RecyclerView.Adapter<allclasslist_adap
     @Override
     public void onBindViewHolder(@NonNull allclasslist_adapter.ViewHolder holder,@SuppressLint("RecyclerView") int position) {
 
-        holder.className.setText(list.get(position).getClassName());
+        holder.class_Name.setText(String.valueOf(list.get(position).getRoll()));
+        System.out.println(list.get(position).getRoll());
 
 
     }
@@ -49,10 +49,10 @@ public class allclasslist_adapter extends RecyclerView.Adapter<allclasslist_adap
     }
 
     public class ViewHolder  extends RecyclerView.ViewHolder {
-        TextView className;
+        TextView class_Name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-           className = itemView.findViewById(R.id.class_name);
+           class_Name = itemView.findViewById(R.id.class_name);
         }
     }
 }

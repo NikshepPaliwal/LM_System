@@ -1,4 +1,4 @@
-package com.example.librarymanagementsystem;
+package com.ninja_developer.lmsystem;
 
 import org.junit.Test;
 

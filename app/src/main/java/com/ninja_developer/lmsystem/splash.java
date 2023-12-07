@@ -1,12 +1,10 @@
-package com.ninja_developer.librarymanagementsystem;
+package com.ninja_developer.lmsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.ninja_developer.librarymanagementsystem.R;
 
 public class splash extends AppCompatActivity {
 

@@ -1,6 +1,4 @@
-package com.ninja_developer.librarymanagementsystem;
-
-import androidx.annotation.NonNull;
+package com.ninja_developer.lmsystem;
 
 public class book_issue_constructor {
     private String bookBarcode;

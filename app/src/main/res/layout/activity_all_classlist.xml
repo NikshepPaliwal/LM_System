@@ -13,7 +13,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="All Listed Classes"
+        android:text="All Students in Classes"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

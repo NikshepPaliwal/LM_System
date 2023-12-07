@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.ninja_developer.librarymanagementsystem"
+    namespace = "com.ninja_developer.lmsystem"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.ninja_developer.librarymanagementsystem"
-        minSdk = 24
+        applicationId = "com.ninja_developer.lmsystem"
+        minSdk = 21
         targetSdk = 33
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
