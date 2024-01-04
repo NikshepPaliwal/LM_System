@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 import android.content.Intent;
 import android.os.Bundle;

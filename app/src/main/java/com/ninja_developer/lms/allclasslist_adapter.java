@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

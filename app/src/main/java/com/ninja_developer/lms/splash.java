@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +22,6 @@ public class splash extends AppCompatActivity {
                 startActivity(iHome);
                 finish();
             }
-        },time=2000);
+        },time=4000);
     }
 }

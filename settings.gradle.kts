@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Digital Library"
+rootProject.name = "LM SYSTEM"
 include(":app")
  

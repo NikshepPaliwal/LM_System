@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 public class model {
    String book_Title;

@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.ninja_developer.lmsystem"
+    namespace = "com.ninja_developer.lms"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.ninja_developer.lmsystem"
+        applicationId = "com.ninja_developer.lms"
         minSdk = 21
         targetSdk = 33
         versionCode = 1
-        versionName = "1.1.0"
+        versionName = "1.1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -47,7 +47,6 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging:23.2.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-
     testImplementation("junit:junit:4.13.2")
     implementation ("com.google.android.gms:play-services-vision:20.1.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

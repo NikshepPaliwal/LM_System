@@ -8,7 +8,8 @@
     tools:context=".login">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
 
         <androidx.cardview.widget.CardView
@@ -19,7 +20,7 @@
             android:layout_marginStart="20sp"
             android:layout_marginTop="232dp"
             android:layout_marginEnd="20sp"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="#fff"
             app:cardCornerRadius="30sp"
             app:cardMaxElevation="50sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="120sp"
-                android:text="Login"
+                android:text="User Login"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -103,13 +104,13 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/buttonLogin"
                     android:layout_width="180sp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginVertical="40sp"
-                    android:backgroundTint="#E8283593"
+                    android:backgroundTint="#E84D5BBA"
                     android:text="Login"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -130,7 +131,7 @@
             android:gravity="center"
             android:text="Dont' have an account?\nRegister Here"
             android:textAlignment="center"
-            android:textColor="#3D54D3"
+            android:textColor="#E84D5BBA"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -145,7 +146,7 @@
             android:layout_below="@+id/registerbtn"
             android:layout_marginTop="12dp"
             android:text="Forget Password ?"
-            android:textColor="#3D54D3"
+            android:textColor="#E84D5BBA"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

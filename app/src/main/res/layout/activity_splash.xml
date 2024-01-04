@@ -4,38 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2D74AA"
+    android:background="#F0FFFFFF"
     tools:context=".splash">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="208dp"
-        android:layout_height="200dp"
+        android:layout_width="350sp"
+        android:layout_height="250dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="68dp"
-        android:src="@drawable/splash_1"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/applogo"
         app:circularflow_defaultRadius="@dimen/cardview_default_radius"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="240dp"
         android:fontFamily="sans-serif-smallcaps"
-
-        android:text="@string/app_name"
+        android:text="Library Management\n System"
         android:textAlignment="center"
-        android:textColor="#fff"
-        android:textSize="28dp"
+        android:textColor="#C16868"
+        android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="68dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Developed By"
+        android:textColor="#C16868"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -43,14 +59,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="264dp"
+        android:layout_marginBottom="28dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Smart Library"
-        android:textColor="#fff"
+        android:text="Nikshep Paliwal"
+        android:textColor="#C16868"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
 

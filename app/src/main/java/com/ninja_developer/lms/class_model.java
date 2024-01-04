@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 public class class_model {
     public class_model(){

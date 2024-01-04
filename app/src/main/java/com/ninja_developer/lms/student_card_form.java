@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -171,24 +171,6 @@ public class student_card_form extends AppCompatActivity {
                     }
                 });
 
-//            if(name.equals("") || roll.equals("") || Class.equals("SELECT CLASS") || Branch.equals("") || fatherName.equals("") ||mob.equals("") || Add.equals("")){
-//                Toast.makeText(student_card_form.this, "Fill all the details.", Toast.LENGTH_SHORT).show();
-//            }else {
-//
-//                FirebaseDatabase db = FirebaseDatabase.getInstance();
-//                DatabaseReference node = db.getReference("Libraries");
-//                FirebaseUser firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
-//                String userId = firebaseuser.getUid();
-//                student_form_helper studentFormHelper = new student_form_helper(name, roll, Class, Branch, fatherName, mob, Add);
-//                node.child(userId).child("Students Card").child(Class).child(roll).child("Personal Data").child(roll).setValue(studentFormHelper);
-//                student_name.setText("");
-//                roll_number.setText("");
-//                branch.setText("");
-//                father_name.setText("");
-//                mobile_number.setText("");
-//                address.setText("");
-//                Toast.makeText(student_card_form.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-//            }
     }
 
 

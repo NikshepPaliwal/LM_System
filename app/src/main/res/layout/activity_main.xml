@@ -41,7 +41,7 @@
             android:layout_marginHorizontal="50sp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
-            android:text="@string/app_name"
+            android:text="Library Management System"
             android:textColor="#FCFCFD"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -57,10 +57,10 @@
             android:layout_width="30sp"
             android:layout_height="30sp"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/baseline_power_settings_new_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toEndOf="@+id/name"
             app:layout_constraintTop_toTopOf="parent">
 

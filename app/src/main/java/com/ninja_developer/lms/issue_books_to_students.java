@@ -1,4 +1,8 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Intent;
@@ -8,36 +12,40 @@ import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.app.ActivityCompat;
-
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.IOException;
 
-public class add_books extends AppCompatActivity {
+public class issue_books_to_students extends AppCompatActivity {
 
 
     SurfaceView surfaceView;
     TextView txtBarcodeValue;
+    ImageView tourch;
     private BarcodeDetector barcodeDetector;
+    //    static CameraManager cameraManager;
+//    Static
     private CameraSource cameraSource;
     private static final int REQUEST_CAMERA_PERMISSION = 201;
-    AppCompatButton add_to_shopbtn;
+    Button issue_book_to_student;
     String intentData = "";
     boolean isEmail = false;
+    //    private CameraManager cameraManager;
+//    private String getCameraID;
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_books);
+        setContentView(R.layout.activity_issue_books_to_students);
 
         initViews();
 
@@ -51,19 +59,20 @@ public class add_books extends AppCompatActivity {
     private void initViews() {
         txtBarcodeValue = findViewById(R.id.txtBarcodeValue);
         surfaceView = findViewById(R.id.surfaceView);
-        add_to_shopbtn = findViewById(R.id.add_to_library_btn);
+        issue_book_to_student = findViewById(R.id.issue_book_to_student);
 
 
-        add_to_shopbtn.setOnClickListener(new View.OnClickListener() {
+        issue_book_to_student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (intentData.length() > 0) {
 
-                    startActivity(new Intent(add_books.this, filling_book_details.class).putExtra("scanned value", intentData));
-                    finish();
+                    startActivity(new Intent(issue_books_to_students.this, book_issue_form.class).putExtra("scanned value", intentData));
+
                 }
             }
         });
+
 
     }
 
@@ -83,10 +92,10 @@ public class add_books extends AppCompatActivity {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
                 try {
-                    if (ActivityCompat.checkSelfPermission(add_books.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.checkSelfPermission(issue_books_to_students.this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                         cameraSource.start(surfaceView.getHolder());
                     } else {
-                        ActivityCompat.requestPermissions(add_books.this, new
+                        ActivityCompat.requestPermissions(issue_books_to_students.this, new
                                 String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
                     }
 
@@ -126,10 +135,8 @@ public class add_books extends AppCompatActivity {
                                 intentData = barcodes.valueAt(0).email.address;
                                 txtBarcodeValue.setText(intentData);
                                 isEmail = true;
-                                add_to_shopbtn.setText("ADD CONTENT TO THE MAIL");
                             } else {
                                 isEmail = false;
-                                add_to_shopbtn.setText("Next");
                                 intentData = barcodes.valueAt(0).displayValue;
                                 txtBarcodeValue.setText(intentData);
                             }
@@ -141,6 +148,7 @@ public class add_books extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -152,4 +160,5 @@ public class add_books extends AppCompatActivity {
         super.onResume();
         initialiseDetectorsAndSources();
     }
+
 }

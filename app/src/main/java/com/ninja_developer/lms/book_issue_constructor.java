@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 public class book_issue_constructor {
     private String bookBarcode;

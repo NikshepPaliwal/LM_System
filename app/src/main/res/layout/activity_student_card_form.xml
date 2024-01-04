@@ -219,7 +219,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/select_img"
                 android:layout_width="150sp"
                 android:layout_height="50sp"
@@ -244,7 +244,7 @@
             </ImageView>
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/saveData"
                 android:layout_width="150sp"
                 android:layout_height="50sp"

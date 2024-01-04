@@ -1,4 +1,4 @@
-package com.ninja_developer.lmsystem;
+package com.ninja_developer.lms;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

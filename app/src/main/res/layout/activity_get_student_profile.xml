@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".get_student_profile"
-    android:background="#2D74AA">
+    android:background="@drawable/wave">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +17,6 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="50sp"
-            android:background="#2D74AA"
             android:gravity="center"
             android:text="Getting Student Profile"
             android:textColor="@color/white"
@@ -91,7 +90,7 @@
             </Spinner>
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/search_btn"
                 android:layout_width="150sp"
                 android:layout_height="50sp"
@@ -110,7 +109,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="130sp"
                 android:layout_height="110sp"
-                android:layout_marginLeft="20sp"
+                android:layout_marginLeft="15sp"
                 android:layout_marginTop="290sp"
                 android:background="@color/white"
                 android:visibility="invisible">
@@ -218,7 +217,7 @@
                 android:layout_marginVertical="490dp"
                 android:layout_marginRight="15sp"
                 android:backgroundTint="#283593"
-                android:text="Delete Profile"
+                android:text="Delete Pro"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold"
